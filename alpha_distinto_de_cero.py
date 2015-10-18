@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 condicion_inicial = [10, 0, 0, 0.1]
 p = Planeta(condicion_inicial, 10**(-2.232))#RUT=18.769.232-6
-
+#p = Planeta(condicion_inicial)
 
 N_steps = np.int(1e6)
 dt=2200./N_steps
