@@ -2,12 +2,12 @@ from planeta import Planeta
 import numpy as np
 import matplotlib.pyplot as plt
 
-condicion_inicial = [10, 0, 0, 0.1]
+condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial, 10**(-2.232))#RUT=18.769.232-6
 #p = Planeta(condicion_inicial)
 
 N_steps = np.int(1e6)
-dt=2200./N_steps
+dt=25000./N_steps
 t=np.linspace(0,2200,N_steps)
 #creamos los arrays en que se guardara la informacion
 x= np.zeros(N_steps)
