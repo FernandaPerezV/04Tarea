@@ -21,15 +21,14 @@ energia = np.zeros(N_steps)
 
 x[0]= 10
 y[0]= 0
-energia[0]=p.energia_actual
+energia[0]=p.energia_total()
 
 
 for i in range(1, N_steps):
     p.avanza_euler(dt)
     x[i]=p.y_actual[0]
     y[i]=p.y_actual[1]
-    p.energia_total()
-    energia[i]=p.energia_actual
+    energia[i]=p.energia_total()
 
 fig = plt.figure(1)
 fig.clf()

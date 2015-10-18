@@ -110,8 +110,10 @@ class Planeta(object):
         self.y_actual=[x_new,y_new, vx0, vy0] #solo importa x_new, y_new para calculas los f
         vx1,vy1,fx1,fy1= self.ec_de_mov()
 
-        vx_new=vx0+fx1*dt/2.
-        vy_new=vy0+fy1*dt/2.
+        #vx_new=vx0+fx1*dt/2.
+        #vy_new=vy0+fy1*dt/2.
+        vx_new=vx0+fx1*dt/2.+fx0*dt/2.
+        vy_new=vy0+fy1*dt/2.+fy0*dt/2.
 
         #finalmente:
         self.y_actual=[x_new, y_new, vx_new, vy_new]
