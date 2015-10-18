@@ -2,12 +2,12 @@ from planeta import Planeta
 import numpy as np
 import matplotlib.pyplot as plt
 
-condicion_inicial = [10, 0, 0, 0.1]
+condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial)
 
-N_steps = np.int(1e5)
-dt=500./N_steps
-t=np.linspace(0,500,N_steps)
+N_steps = 7*np.int(1e5)
+dt=4000./N_steps
+t=np.linspace(0,4000,N_steps)
 #creamos los arrays en que se guardara la informacion
 x= np.zeros(N_steps)
 y= np.zeros(N_steps)
@@ -36,7 +36,7 @@ ax1 = fig.add_subplot(211)
 ax1.plot(x,y)
 ax2 = fig.add_subplot(212)
 ax2.plot(t,energia)
-ax2.set_ylim(-1,1)
+#ax2.set_ylim(-1,1)
 plt.draw()
 plt.show()
-plt.savefig('figura2.png')
+plt.savefig('verlet.png')

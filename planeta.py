@@ -25,7 +25,7 @@ class Planeta(object):
         m=1
         x0, y0, vx0, vy0=self.y_actual
         r=(x0**2+y0**2)**(0.5)
-        self.energia_actual = 0.5*m*(vx0**2+vy0**2)-G*M*m/r + alpha*G*M*m/r**2
+        self.energia_actual = 0.5*m*(vx0**2+vy0**2)-G*M*m/r + self.alpha*G*M*m/r**2
 
 
     def ec_de_mov(self):
@@ -34,10 +34,7 @@ class Planeta(object):
         primer orden.
         '''
         x, y, vx, vy = self.y_actual
-        # fx = ...
-        # fy = ...
 
-        #yo hice esto
         G=1
         M=1
 
@@ -72,14 +69,14 @@ class Planeta(object):
         x0,y0,vx0,vy0=self.y_actual
 
         #cada vez que se calcula un Ki, se recalcula y_actual para calcular Ki+1
-        k1=self.ec_de_mov()
-        self.y_actual=[x0+dt*k1[0]/2. , y0+dt*k1[1]/2. , vx0+dt*k1[2]/2., vy0+dt*k1[3]/2.]
+        k1=self.ec_de_mov()#vxo,vyo,fxo,fyo
+        self.y_actual=[x0+k1[0]/2. , y0+k1[1]/2. , vx0+k1[2]/2., vy0+k1[3]/2.]
 
-        k2=self.ec_de_mov()
-        self.y_actual=[x0+dt*k2[0]/2. , y0+dt*k2[1]/2. , vx0+dt*k2[2]/2., vy0+dt*k2[3]/2.]
+        k2=self.ec_de_mov()#vx1,vy1,fx1,fy1
+        self.y_actual=[x0+k2[0]/2. , y0+k2[1]/2. , vx0+k2[2]/2., vy0+k2[3]/2.]
 
         k3=self.ec_de_mov()
-        self.y_actual=[x0+dt*k3[0] , y0+dt*k3[1] , vx0+dt*k3[2], vy0+dt*k3[3]]
+        self.y_actual=[x0+k3[0] , y0+k3[1] , vx0+k3[2], vy0+k3[3]]
 
         k4=self.ec_de_mov()
 
@@ -125,12 +122,12 @@ class Planeta(object):
         '''
         G=1
         M=1
-        alpha=0
+
         m=1
         x, y, vx, vy = self.y_actual
         vx,vy,fx,fy= self.ec_de_mov()
         r=(x**2+y**2)**(0.5)
 
-        self.energia_actual=0.5*m*(vx**2+vy**2)-G*M*m/r + alpha*G*M*m/r**2
+        self.energia_actual=0.5*m*(vx**2+vy**2)-G*M*m/r + self.alpha*G*M*m/r**2
 
         pass

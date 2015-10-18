@@ -2,16 +2,15 @@ from planeta import Planeta
 import numpy as np
 import matplotlib.pyplot as plt
 
-condicion_inicial = [10, 0, 0, 0.1]
+condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial)
 
 
-N_steps = np.int(100)
-dt=100./N_steps
-t=np.linspace(0,300,N_steps)
+N_steps = 4*np.int(1e3)
+dt=2000./N_steps
+t=np.linspace(0,2000,N_steps)
 
-#t=np.linspace(0,100,N_steps)
-
+#800 y 700
 #creamos los arrays en que se guardara la informacion
 x= np.zeros(N_steps)
 y= np.zeros(N_steps)
@@ -38,4 +37,4 @@ ax2 = fig.add_subplot(212)
 ax2.plot(t,energia)
 plt.draw()
 plt.show()
-plt.savefig('figura3.png')
+plt.savefig('rk4.png')
