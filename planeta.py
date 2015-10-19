@@ -95,8 +95,6 @@ class Planeta(object):
         '''
         Similar a avanza_euler, pero usando Verlet.
         '''
-        #Como Verlet necesita dos puntos anteriores y solo tenemos uno (condiciones iniciales)
-        #calcularemos el segundo punto con otro metodo y luego seguiremos con Verlet.
         x0,y0,vx0,vy0=self.y_actual
         vx0,vy0,fx0,fy0= self.ec_de_mov()
 
