@@ -58,6 +58,7 @@ class Planeta(object):
         vy_new=fy*dt+self.y_actual[3]
         condicion_actual=[x_new,y_new,vx_new,vy_new]
         self.y_actual=condicion_actual
+        self.t_actual+=dt
 
         pass
 
@@ -87,6 +88,7 @@ class Planeta(object):
 
         #se actualiza y_actual a partir de las condiciones iniciales dando un paso dt
         self.y_actual=[x_new,y_new,vx_new,vy_new]
+        self.t_actual+=dt
 
         pass
 
@@ -112,6 +114,7 @@ class Planeta(object):
 
         #finalmente:
         self.y_actual=[x_new, y_new, vx_new, vy_new]
+        self.t_actual+=dt
         pass
 
     def energia_total(self):
