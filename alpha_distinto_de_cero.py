@@ -28,10 +28,12 @@ for i in range(1, N_steps):
 fig = plt.figure(1)
 fig.clf()
 
+indice=np.where(energia==energia.min())
 ax1 = fig.add_subplot(211)
 plt.suptitle('Trayectoria y energia vs tiempo con $v_{y}(t=0)=0.4$ y  ' r'$\alpha=10^{-2.232}$')
 fig.subplots_adjust(hspace=.3)
 ax1.plot(x,y)
+ax1.plot(x[indice],y[indice],'o',color='r')
 ax1.grid(True)
 ax1.set_xlabel('x')
 ax1.set_ylabel('y')

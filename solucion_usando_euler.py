@@ -51,6 +51,8 @@ ax2.grid(True)
 ax2.set_xlabel('tiempo')
 ax2.set_ylabel('energia')
 ax2.set_ylim(-0.07,-0.001)
+
+
 plt.draw()
 plt.show()
 plt.savefig('euler.png')
