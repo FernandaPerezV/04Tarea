@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial)
 
-N_steps = 7*np.int(1e5)
+N_steps = 4*np.int(1e4)
 dt=4000./N_steps
 #escogemos hasta 2000 para comparar todas las energias hasta el mismo tiempo
 t1=np.linspace(0,2000,N_steps)
@@ -38,7 +38,6 @@ ax1 = fig.add_subplot(311)
 plt.suptitle('Trayectoria y energia vs tiempo con $v_{y}(t=0)=0.4$ y  ' r'$\alpha=0$')
 fig.subplots_adjust(hspace=.3)
 ax1.plot(x,y)
-ax1.plot(x[274889],y[274889],'o',color='r')
 ax1.set_xlim(-45,15)
 ax1.grid(True)
 ax1.set_xlabel('x')

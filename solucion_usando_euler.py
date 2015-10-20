@@ -10,11 +10,11 @@ p = Planeta(condicion_inicial)
 
 
 
-N_steps = 3*np.int(1e4)
+N_steps = 5*np.int(1e4)
 dt=5000./N_steps
 #escogemos hasta 2000 para comparar todas las energias hasta el mismo tiempo
 
-t=np.linspace(0,2000,N_steps)
+t=np.linspace(0,5000,N_steps)
 #creamos los arrays en que se guardara la informacion
 x= np.zeros(N_steps)
 y= np.zeros(N_steps)

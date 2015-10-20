@@ -6,9 +6,9 @@ condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial, 10**(-2.232))#RUT=18.769.232-6
 #p = Planeta(condicion_inicial)
 
-N_steps = np.int(1e6)
+N_steps = 245*np.int(1e3)
 dt=24500./N_steps
-t=np.linspace(0,25000,N_steps)
+t=np.linspace(0,24500,N_steps)
 #creamos los arrays en que se guardara la informacion
 x= np.zeros(N_steps)
 y= np.zeros(N_steps)
@@ -79,9 +79,6 @@ for velocidad in velocidad_angular:
 velocidad_angular_promedio=suma_velocidades_angular/30.
 
 print velocidad_angular_promedio
-
-
-
 
 
 
