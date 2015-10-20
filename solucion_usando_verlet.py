@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial)
 
-N_steps = 4*np.int(1e4)
+N_steps = 8000
 dt=4000./N_steps
 #escogemos hasta 2000 para comparar todas las energias hasta el mismo tiempo
-t1=np.linspace(0,2000,N_steps)
+t1=np.linspace(0,4000,N_steps)
 t2=np.linspace(0,4000,N_steps)
 #creamos los arrays en que se guardara la informacion
 x= np.zeros(N_steps)
@@ -56,7 +56,7 @@ ax3.plot(t2,energia)
 ax3.grid(True)
 ax3.set_xlabel('tiempo')
 ax3.set_ylabel('energia')
-ax3.set_ylim(-0.07,-0.001)
+ax3.set_ylim(-0.03,-0.01)
 
 plt.draw()
 plt.show()

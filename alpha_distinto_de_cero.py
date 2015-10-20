@@ -6,7 +6,7 @@ condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial, 10**(-2.232))#RUT=18.769.232-6
 #p = Planeta(condicion_inicial)
 
-N_steps = 245*np.int(1e3)
+N_steps = 490*np.int(1e2)
 dt=24500./N_steps
 t=np.linspace(0,24500,N_steps)
 #creamos los arrays en que se guardara la informacion

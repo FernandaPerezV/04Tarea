@@ -6,9 +6,10 @@ condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial)
 
 
-N_steps = 4*np.int(1e3)
-dt=2000./N_steps
-t=np.linspace(0,2000,N_steps)
+N_steps = 4000
+dt=4000./N_steps
+t1=np.linspace(0,4000,N_steps)
+t2=np.linspace(0,4000,N_steps)
 
 #800 y 700
 #creamos los arrays en que se guardara la informacion
@@ -30,20 +31,31 @@ for i in range(1, N_steps):
 fig = plt.figure(1)
 fig.clf()
 
-ax1 = fig.add_subplot(211)
+ax1 = fig.add_subplot(311)
 plt.suptitle('Trayectoria y energia vs tiempo con $v_{y}(t=0)=0.4$ y  ' r'$\alpha=0$')
 fig.subplots_adjust(hspace=.3)
 ax1.plot(x,y)
+ax1.set_xlim(-45,15)
+ax1.set_ylim(-30,30)
 ax1.grid(True)
 ax1.set_xlabel('x')
 ax1.set_ylabel('y')
 
-ax2 = fig.add_subplot(212)
-ax2.plot(t,energia)
+ax2 = fig.add_subplot(312)
+ax2.plot(t1,energia)
 ax2.grid(True)
 ax2.set_xlabel('tiempo')
 ax2.set_ylabel('energia')
-ax2.set_ylim(-0.07,-0.001)
+
+fig.subplots_adjust(hspace=.5)
+
+ax3 = fig.add_subplot(313)
+ax3.plot(t2,energia)
+ax3.grid(True)
+ax3.set_xlabel('tiempo')
+ax3.set_ylabel('energia')
+ax3.set_ylim(-0.03,-0.01)
+
 plt.draw()
 plt.show()
 plt.savefig('rk4.png')
