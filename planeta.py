@@ -3,7 +3,11 @@
 
 class Planeta(object):
     '''
-    Complete el docstring.
+    Esta clase permite definir un objeto como un planeta con masa=1 y
+    condiciones iniciales dadas por el usuario, bajo un potencial gravitacional
+    relativista.
+    El objeto planeta puede avanzar un paso con metodos como runge-kutta,
+    verlet y euler explicito, guardando posiciones, velocidades y energia.
     '''
 
     def __init__(self, condicion_inicial, alpha=0):

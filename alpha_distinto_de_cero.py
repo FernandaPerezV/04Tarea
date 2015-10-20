@@ -1,15 +1,20 @@
+'''
+Este script utiliza la clase planeta para integrar la trayectoria de
+aproximadamente 30 orbitas con el metodo de verlet, graficando la
+trayectoria y la energia vs tiempo en cada momento. Utiliza alpha=10^(-2.323)
+ en el potencial.
+'''
 from planeta import Planeta
 import numpy as np
 import matplotlib.pyplot as plt
 
 condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial, 10**(-2.232))#RUT=18.769.232-6
-#p = Planeta(condicion_inicial)
 
 N_steps = 490*np.int(1e2)
 dt=24500./N_steps
 t=np.linspace(0,24500,N_steps)
-#creamos los arrays en que se guardara la informacion
+
 x= np.zeros(N_steps)
 y= np.zeros(N_steps)
 energia = np.zeros(N_steps)
@@ -35,6 +40,8 @@ ax1.plot(x,y)
 ax1.grid(True)
 ax1.set_xlabel('x')
 ax1.set_ylabel('y')
+fig.subplots_adjust(left=0.2)
+
 ax2 = fig.add_subplot(212)
 ax2.plot(t,energia)
 ax2.grid(True)
@@ -79,7 +86,6 @@ for velocidad in velocidad_angular:
 velocidad_angular_promedio=suma_velocidades_angular/30.
 
 print velocidad_angular_promedio
-
 
 
 plt.draw()

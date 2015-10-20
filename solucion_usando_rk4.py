@@ -1,3 +1,11 @@
+'''
+Este script utiliza la clase planeta para integrar la trayectoria de
+aproximadamente 5 orbitas con el metodo de runge-kutta 4, graficando la
+trayectoria y la energia vs tiempo en cada momento. Grafica dos veces energia
+vs tiempo con el fin de dejarlo en dos escalas: una de cerca para ver a forma
+de la funcion y otra mas de lejos para poder comparar con otros metodos menos
+eficientes. Utiliza alpha=0 en el potencial.
+'''
 from planeta import Planeta
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,13 +13,12 @@ import matplotlib.pyplot as plt
 condicion_inicial = [10, 0, 0, 0.4]
 p = Planeta(condicion_inicial)
 
-
 N_steps = 4000
 dt=4000./N_steps
-t1=np.linspace(0,4000,N_steps)
-t2=np.linspace(0,4000,N_steps)
+t=np.linspace(0,4000,N_steps)
 
-#800 y 700
+
+
 #creamos los arrays en que se guardara la informacion
 x= np.zeros(N_steps)
 y= np.zeros(N_steps)
@@ -42,15 +49,14 @@ ax1.set_xlabel('x')
 ax1.set_ylabel('y')
 
 ax2 = fig.add_subplot(312)
-ax2.plot(t1,energia)
+ax2.plot(t,energia)
 ax2.grid(True)
 ax2.set_xlabel('tiempo')
 ax2.set_ylabel('energia')
-
 fig.subplots_adjust(hspace=.5)
 
 ax3 = fig.add_subplot(313)
-ax3.plot(t2,energia)
+ax3.plot(t,energia)
 ax3.grid(True)
 ax3.set_xlabel('tiempo')
 ax3.set_ylabel('energia')
