@@ -50,6 +50,8 @@ ax2.plot(t,energia)
 ax2.grid(True)
 ax2.set_xlabel('tiempo')
 ax2.set_ylabel('energia')
+ax2.set_ylim(-0.03,-0.01)
+
 
 
 plt.draw()
