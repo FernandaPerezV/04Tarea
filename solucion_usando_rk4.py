@@ -39,7 +39,7 @@ fig = plt.figure(1)
 fig.clf()
 
 ax1 = fig.add_subplot(311)
-plt.suptitle('Trayectoria y energia vs tiempo con $v_{y}(t=0)=0.4$ y  ' r'$\alpha=0$')
+plt.suptitle('Trayectoria y energia vs tiempo con $v_{y}(t=0)=0.4$ y  ' r'$\alpha=0$ (Runge-kutta 4)' )
 fig.subplots_adjust(hspace=.3)
 ax1.plot(x,y)
 ax1.set_xlim(-45,15)
